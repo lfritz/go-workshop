@@ -50,4 +50,8 @@ This is great if we want to know the relationship between nodes but depending on
 What are Queues?
 Step by step on how to queue and visit (screenshot )
 
+Gif of BSF and DSF:
+
+![alt-text](pkg/dfsvsbfs.gif)
+
 Further reading about [DFS versus BFS](https://medium.com/@kenny.hom27/breadth-first-vs-depth-first-tree-traversal-in-javascript-48df2ebfc6d1) and [traversing a graph with BSF](https://medium.com/basecs/going-broad-in-a-graph-bfs-traversal-959bd1a09255)
