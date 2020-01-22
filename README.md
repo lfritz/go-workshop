@@ -63,15 +63,25 @@ Write forloop to get from Berlin to Leipzig
         }
     }
 
+## 3. Breadth First Search Algorithm
 
-## 3. BFS (10 min Jessica)
+We can use various search algorithms to explore the relation between nodes (or vertices) in a graph via the connecting edges. Two of the fundamental ones used for graphs
+are [depth first search](https://en.wikipedia.org/wiki/Depth-first_search) and [breadth first search](https://en.wikipedia.org/wiki/Breadth-first_search), for the challenge today we will use the second one but to better undstand it we will compare the two.
 
-What is queueing?
-Step by step on how to queue and visit
+Lets start with depth first search. We start from a chosen node and arbitrary take a next node going all the way along until we can go no further (to it’s furthest depth) We then backtrack through the graph until we find another path following this new path to it’s end. This pattern of going to a deadend and backtracking continues until we backtrack all the way to the chosen start node. It means we have explore every node in the graph. Worthy of noting is that DFS uses a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) to track where it is in the graph. Stacks follow a last in first out data structure.
 
-https://en.wikipedia.org/wiki/Breadth-first_search
-https://medium.com/basecs/going-broad-in-a-graph-bfs-traversal-959bd1a09255
+This is great if we want to know the relationship between nodes but depending on the graph may be more time consuming than we would like. Imagine for instance a very deep graph where the node we are looking for is across from the start node rather than below it. This is where breadth first search comes in handy as it explores the graph in a different manner! BFS checks all sibling elements before going to the next row of the graph - hence it being called breadth first. This makes BFS particularly useful for finding the shortest path on unweighted graphs.
 
+BFS is accomplished using a [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)). Unlike a stack queues use a first in first out structure. BFS checks whether a node (sometimes called vertex) has been discovered (visited) before enqueueing (adding) the node to the queue rather than delaying this check until the node is dequeued (removed) from the queue. We will implement the queue here [here](/pkg/queue.go)
+
+This gif shows how both BFS and DFS check through the graph:
+
+![alt-text](/dfsvsbfs.gif)
+
+#### Further reading
+
+- [DFS versus BFS](https://medium.com/@kenny.hom27/breadth-first-vs-depth-first-tree-traversal-in-javascript-48df2ebfc6d1)
+- [Traversing a graph with BFS](https://medium.com/basecs/going-broad-in-a-graph-bfs-traversal-959bd1a09255)
 
 ## 4. The mission
 
