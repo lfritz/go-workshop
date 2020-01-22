@@ -72,9 +72,7 @@ Lets start with depth first search. We start from a chosen node and arbitrary ta
 
 This is great if we want to know the relationship between nodes but depending on the graph may be more time consuming than we would like. Imagine for instance a very deep graph where the node we are looking for is across from the start node rather than below it. This is where breadth first search comes in handy as it explores the graph in a different manner! BFS checks all sibling elements before going to the next row of the graph - hence it being called breadth first. This makes BFS particularly useful for finding the shortest path on unweighted graphs.
 
-We can inspect how the queue has been implemented in GO [here](/pkg/queue.go)
-
-BFS is accomplished using a [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)). Unlike a stack queues use a first in first out structure. BFS checks whether a node (sometimes called vertex) has been discovered (visited) before enqueueing (adding) the node to the queue rather than delaying this check until the node is dequeued (removed) from the queue.
+BFS is accomplished using a [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type)). Unlike a stack queues use a first in first out structure. BFS checks whether a node (sometimes called vertex) has been discovered (visited) before enqueueing (adding) the node to the queue rather than delaying this check until the node is dequeued (removed) from the queue. We will implement the queue here [here](/pkg/queue.go)
 
 This gif shows how both BFS and DFS check through the graph:
 
